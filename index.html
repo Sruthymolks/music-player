@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Webapp</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/21084a7593.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="music-player">
+        <nav>
+          <div class="circle">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div class="circle" onclick="togglePlaylist()">
+            <i class="fa-solid fa-bars" id="barsIcon"></i>
+          </div>
+        </nav>
+        <img src="media/thumpnail.jpg" class="song-img" />
+        <h1 id="songTitle">At My Worst</h1>
+        <p id="songArtist">Pink Sweats</p>
+        <audio id="song">
+          <source
+            src="media/I Need Somebody Who Can Love Me At My Worst(audiosong.in).mp3"
+            type="audio/mpeg"
+          />
+        </audio>
+        <input type="range" value="0" id="progress" />
+        <div class="controls">
+          <div onclick="playPrevious()">
+            <i class="fa-solid fa-backward"></i>
+          </div>
+          <div onclick="playPause()">
+            <i class="fa-solid fa-play" id="ctrlIcon"></i>
+          </div>
+          <div onclick="playNext()"><i class="fa-solid fa-forward"></i></div>
+        </div>
+      </div>
+      <div id="playlistContainer" class="playlistContainer">
+        <h1>Playlist</h1>
+        <ul id="playlist"></ul>
+        <button onclick="goToMusicPlayer()">Play Music</button>
+      </div>
+    </div>
+    <script src="musicscript.js"></script>
+  </body>
+</html>
